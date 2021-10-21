@@ -1,0 +1,64 @@
+﻿<UserControl
+	x:Class="Mario.Controls.GameEntityEditor"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:local="clr-namespace:Mario.Controls"
+	xmlns:viewModel="clr-namespace:Mario.ViewModel"
+	mc:Ignorable="d"
+	d:DesignHeight="900"
+	d:DesignWidth="200">
+	<!--<UserControl.DataContext>
+		<viewModel:GameEntityViewModel />
+	</UserControl.DataContext>-->
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="115"/>
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0" Orientation="Vertical" Margin="4" DataContext="{Binding SelectedEntity}">
+			<StackPanel Orientation="Vertical">
+				<TextBlock Text="Type:" Margin="3"/>
+				<ComboBox ItemsSource="{Binding Types}" SelectedIndex="{Binding SelectedTypeIndex}"  Margin="12,1"  HorizontalContentAlignment="Right" />
+			</StackPanel>
+			<StackPanel Orientation="Vertical">
+				<TextBlock Text="Start X:" Margin="3"/>
+				<TextBox Text="{Binding StartX}" Margin="12,1" HorizontalContentAlignment="Right" IsEnabled="False" />
+			</StackPanel>
+			<StackPanel Orientation="Vertical">
+				<TextBlock Text="Start Y:" Margin="3"/>
+				<TextBox Text="{Binding StartY}" Margin="12,1" HorizontalContentAlignment="Right" IsEnabled="False" />
+			</StackPanel>
+			<StackPanel Orientation="Vertical">
+				<TextBlock Text="Min X:" Margin="3"/>
+				<TextBox Text="{Binding MinX}" Margin="12,1" HorizontalContentAlignment="Right" />
+			</StackPanel>
+			<StackPanel Orientation="Vertical">
+				<TextBlock Text="Max X:" Margin="3"/>
+				<TextBox Text="{Binding MaxX}" Margin="12,1" HorizontalContentAlignment="Right" />
+			</StackPanel>
+			<StackPanel Orientation="Vertical">
+				<TextBlock Text="Height:" Margin="3"/>
+				<TextBox Text="{Binding Height}" Margin="12,1" HorizontalContentAlignment="Right" />
+			</StackPanel>
+			<StackPanel Orientation="Vertical">
+				<TextBlock Text="Width:" Margin="3"/>
+				<TextBox Text="{Binding Width}" Margin="12,1" HorizontalContentAlignment="Right" />
+			</StackPanel>
+			<TextBlock Margin="3" TextAlignment="Center">
+				Move Right: D or Right Arrow<LineBreak/>
+				Move Left: A or Left Arrow<LineBreak/>
+				Jump: Space Bar<LineBreak/>
+				Respawn: N
+			</TextBlock>
+
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Grid.Row="1">
+			<Button Command="{Binding NewLandscapeCommand}" Margin="4,4,4,4" Width="170" Height="30" Content="NEW LANDSCAPE" />
+			<Button Command="{Binding NewEnemyCommand}" Margin="4,4,4,4" Width="170" Height="30" Content="NEW ENEMY" />
+			<Button Command="{Binding RemoveEntityCommand}" Margin="4,4,4,4" Width="170" Height="30" Content="REMOVE" />
+
+		</StackPanel>
+	</Grid>
+</UserControl>

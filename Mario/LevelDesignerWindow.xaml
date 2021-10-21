@@ -1,0 +1,42 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:Mario"
+	xmlns:Controls="clr-namespace:Mario.Controls"
+	xmlns:viewModel="clr-namespace:Mario.ViewModel"
+	x:Class="Mario.LevelDesignerWindow"
+	mc:Ignorable="d"
+	Title="LEVEL DESIGNER"
+	Height="884"
+	KeyDown="LevelControl_OnKeyDown"
+	KeyUp="LevelDesignerWindow_OnKeyUp"
+	Width="1900">
+	<Window.DataContext>
+		<viewModel:LevelDesignerViewModel />
+	</Window.DataContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Menu x:Name="menu" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0">
+			<MenuItem Header="File">
+				<MenuItem Header="Save" x:Name="Save" Click="Save_Click"/>
+				<MenuItem Header="Load" x:Name="Load" Click="Load_Click"/>
+			</MenuItem>
+		</Menu>
+		<Controls:GameEntityEditor Grid.Row="1"/>
+
+		<Controls:LevelControl x:Name="Level" Grid.Column="1" Grid.Row="1" />
+		
+		<!--<TextBlock x:Name="InputLog" Height="300" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" />-->
+
+	</Grid>
+</Window>
