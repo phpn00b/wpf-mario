@@ -2,7 +2,7 @@
 ![Level Designer Preview](https://github.com/phpn00b/wpf-mario/blob/main/game-preview.png)
 This is a simple 2D side scroller based on the original NES Super Mario Brothers written in pure WPF. This is MVVMish and handles all positioning of landscaping, enemies, and mario via canvas.
 
-This is quick and dirty but a good illistration of how to build a game like this quickly. (full project represents about 6 hours of effort... corners were cut)
+Please keep in mind that this project is quick and dirty illistration of how to build a game like Mario. (full project represents about 6 hours of effort... corners were cut)
 
 # Features:
 - Hitboxes for enemies & mario as well as environmental elements.
@@ -19,6 +19,8 @@ This is quick and dirty but a good illistration of how to build a game like this
 
 
 
+# See Also
+https://github.com/phpn00b/super-hellen this is a JavaScript version of the same game engine that makes use of the level files created by the level designer. The JavaScript version is more buggy.
 
 
 Sprites pulled from: https://www.spriters-resource.com/nes/supermariobros/
